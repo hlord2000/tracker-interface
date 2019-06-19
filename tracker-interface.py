@@ -7,7 +7,7 @@ from selenium.webdriver.common.keys import Keys
 import time
 import os
 import calendar
-
+from selenium import *
 # DEF FUNCTIONS #
 
 
