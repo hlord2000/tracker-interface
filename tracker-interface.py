@@ -4,6 +4,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import Select
 import time
 import os
 import calendar
@@ -124,16 +125,18 @@ jobMakerLayout = [
     [sg.Radio('Display Case', "RADIO1", default=True), sg.Radio('CC-JT Letter Creator', "RADIO1"),
      sg.Radio('CC Letter Creator', "RADIO1"),
      sg.Radio('Evidence Request Creator (WIP)', "RADIO1")],
-    [sg.Column(submitButton), sg.Column(cancelButton)],
-    [sg.Button(button_text="Add victim services?", size=(170, 1.5), button_color=('#FFFFFF', '#483D8B'),
-               visible=False, key='VSERV')]
+    [sg.Radio('Case Status Updater', "RADIO1"),
+     sg.Radio('Change of Plea Updater', "RADIO1")],
+    [sg.Column(submitButton),
+     sg.Button(button_text="Add victim services?", button_color=('#FFFFFF', '#7766E8'), visible=False, key='VSERV'),
+     sg.Column(cancelButton)]
 ]
 
 window = sg.Window('Tracker Interface - Case Search', icon="SEAL.jpg").Layout(jobMakerLayout)
 while True:
-
     event, values = window.Read()
     # Makes button invisible again.
+    print(values)
     window.Element('VSERV').Update(visible=False)
     window.VisibilityChanged()
     # Brings web browser back into view.
@@ -180,14 +183,26 @@ while True:
             events = window.Read()
             print(events)
             if events[0] == "VSERV":
+                print("made it to hereeee")
                 driver.switch_to.window(driver.window_handles[0])
                 driver.get(casePage + "/victims")
-                try_click_on_load("/html/body/div[1]/div[2]/div[1]/table/tbody/tr/th/table[2]"
-                                  "/tbody/tr[1]/td/table/tbody/tr/td[2]/a[1]")
-                try_click_on_load("//*[@id=\"vssr_service_kwid_1212\"]")
-                try_click_on_load("//*[@id=\"vssr_service_kwid_1211\"]")
-                try_text_on_load("//*[@id=\"victim_service_service_note\"]", "CC-JT letter sent.")
-                break
+                print("made it to here?")
+                x = 0
+                while True:
+                    try_click_on_load("/html/body/div[1]/div[2]/div[1]/table/tbody/tr/th/table[2]"
+                                      "/tbody/tr[1]/td/table/tbody/tr/td[2]/a[1]")
+                    elem = driver.find_elements_by_xpath("//*[contains(text(), 'Victim:')]")
+                    print([elements.text for elements in elem])
+                    try_click_on_load("/html/body/div[1]/div[2]/div[1]/table/tbody/tr/th/table[2]"
+                                      "/tbody/tr[1]/td/table/tbody/tr/td[2]/a[1]")
+                    elem = driver.find_elements_by_xpath("//*[contains(text(), 'Victim:')]")
+                    elem[x].click()
+                    try_click_on_load("//*[@id=\"vssr_service_kwid_1212\"]")
+                    try_click_on_load("//*[@id=\"vssr_service_kwid_1211\"]")
+                    try_text_on_load("//*[@id=\"victim_service_service_note\"]", "CC-JT letter sent.")
+                    if x == len(elem) - 1:
+                        break
+                    x += 1
             elif events[0] == "Submit":
                 break
             elif events[0] == "Cancel":
@@ -228,16 +243,27 @@ while True:
         driver.execute_script("window.open(\'" + documentsPage + "\')")
         while True:
             events = window.Read()
-            print(events)
             if events[0] == "VSERV":
+                print("made it to hereeee")
                 driver.switch_to.window(driver.window_handles[0])
                 driver.get(casePage + "/victims")
-                try_click_on_load("/html/body/div[1]/div[2]/div[1]/table/tbody/tr/th/table[2]"
-                                  "/tbody/tr[1]/td/table/tbody/tr/td[2]/a[1]")
-                try_click_on_load("//*[@id=\"vssr_service_kwid_1212\"]")
-                try_click_on_load("//*[@id=\"vssr_service_kwid_1211\"]")
-                try_text_on_load("//*[@id=\"victim_service_service_note\"]", "Continued CC letter sent.")
-                break
+                print("made it to here?")
+                x = 0
+                while True:
+                    try_click_on_load("/html/body/div[1]/div[2]/div[1]/table/tbody/tr/th/table[2]"
+                                      "/tbody/tr[1]/td/table/tbody/tr/td[2]/a[1]")
+                    elem = driver.find_elements_by_xpath("//*[contains(text(), 'Victim:')]")
+                    print([elements.text for elements in elem])
+                    try_click_on_load("/html/body/div[1]/div[2]/div[1]/table/tbody/tr/th/table[2]"
+                                      "/tbody/tr[1]/td/table/tbody/tr/td[2]/a[1]")
+                    elem = driver.find_elements_by_xpath("//*[contains(text(), 'Victim:')]")
+                    elem[x].click()
+                    try_click_on_load("//*[@id=\"vssr_service_kwid_1212\"]")
+                    try_click_on_load("//*[@id=\"vssr_service_kwid_1211\"]")
+                    try_text_on_load("//*[@id=\"victim_service_service_note\"]", "Continued CC letter sent.")
+                    if x == len(elem)-1:
+                        break
+                    x += 1
             elif events[0] == "Submit":
                 break
             elif events[0] == "Cancel":
@@ -248,6 +274,10 @@ while True:
     elif values[5]:
         print("a")
         #CALL EVIDENCE REQ LOOP
+    elif values[6]:
+        print("todo, case status update")
+    elif values[7]:
+        print("todo, change of plea")
     else:
         print("ERROR NO RADIO BUTTON SELECTED")
         exit()
