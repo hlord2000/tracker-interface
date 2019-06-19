@@ -6,15 +6,21 @@ from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.keys import Keys
 import time
 import calendar
+import os
 from selenium.webdriver.common.action_chains import ActionChains
 
-### DEF FUNCTIONS ###
-def login(user,pwd):
+
+# DEF FUNCTIONS #
+
+
+def login(user, pwd):
     # Login.
     try_click_on_load("//*[@id=\"memo\"]/p[3]/a")
     try_text_on_load("//*[@id=\"user_login\"]", user)
     try_text_on_load("//*[@id=\"user_password\"]", pwd)
     driver.execute_script("window.alert = function() {};")
+
+
 def try_link_follow(linkFollow, waitElement):
     try:
         element = WebDriverWait(driver, 10).until(
@@ -25,6 +31,8 @@ def try_link_follow(linkFollow, waitElement):
     finally:
         elem = driver.find_element_by_xpath(waitElement)
         driver.get(linkFollow)
+
+
 def try_text_on_load(targetElement, textToBePassed):
     try:
         element = WebDriverWait(driver, 10).until(
@@ -38,6 +46,8 @@ def try_text_on_load(targetElement, textToBePassed):
         elem.send_keys(textToBePassed)
         time.sleep(.01)
         elem.send_keys(Keys.RETURN)
+
+
 def try_click_on_load(waitElement):
     try:
         element = WebDriverWait(driver, 10).until(
@@ -49,15 +59,15 @@ def try_click_on_load(waitElement):
         elem = driver.find_element_by_xpath(waitElement)
         elem.click()
 
+
 # Initialize and identify webdriver.  C:\geckodriver.exe
 
 driver = webdriver.Firefox(executable_path='geckodriver.exe')
 
 # Install requisite Tracker plugin
 
-ext_dir = 'C:\\Users\\SOLintern\\AppData\\Roaming\\Mozilla\\Firefox\\Profiles\\lpxksyhg.default-1559653904042\\extensions\\'
-#ext_dir = 'C:\\Users\\Helmut Lord\\AppData\\Roaming\\Mozilla\\Firefox\\Profiles\\q0ofcpxn.default-release\\extensions\\'
-driver.install_addon(ext_dir + 'trackerhelper5@pacga.org.xpi', temporary=True)
+ext_dir = os.path.abspath("trackerhelper5@pacga.org.xpi")
+driver.install_addon(ext_dir, temporary=True)
 
 # Get tracker homepage
 
@@ -70,7 +80,7 @@ pwd = "CoolCalmCat"
 
 # Call Login Function
 
-login(user,pwd)
+login(user, pwd)
 
 # Loop for asking for info
 continueLoop = True
@@ -104,18 +114,18 @@ while continueLoop:
 
     driver.get("https://tracker4.pacga.org/search?utf8=%E2%9C%93&search%5Blast_name%5D=&search%5Bfi"
                "rst_name%5D=&search%5Bmiddle_name%5D=&search%5Bcase_role_kwid%5D=&search%5Bda_num%5D=&s"
-               "earch%5Bwarrant_num%5D=&search%5Bdocket_num%5D="+fullCaseNum+"&commit=Search&search%5Baka%5D=&searc"
-               "h%5Bssn%5D=&search%5Bdob%5D=&search%5Byob%5D=&search%5Bdl_num%5D=&search%5Bsid_num%5D=&search%"
-               "5Bfbi_num%5D=&search%5Bgdc_num%5D=&search%5Bdoc_ef_num%5D=&search%5Bjail_num%5D=&search%5Bstatus_note%"
-               "5D=&search%5Boca_num%5D=&search%5Bcrimelab_num%5D=&search%5Bfile_num%5D=&search%5Bcounty_id%5D=&log_"
-               "current_user=hlord")
+               "earch%5Bwarrant_num%5D=&search%5Bdocket_num%5D=" + fullCaseNum + "&commit=Search&search%5Baka%5D=&searc"
+                                                                                 "h%5Bssn%5D=&search%5Bdob%5D=&search%5Byob%5D=&search%5Bdl_num%5D=&search%5Bsid_num%5D=&search%"
+                                                                                 "5Bfbi_num%5D=&search%5Bgdc_num%5D=&search%5Bdoc_ef_num%5D=&search%5Bjail_num%5D=&search%5Bstatus_note%"
+                                                                                 "5D=&search%5Boca_num%5D=&search%5Bcrimelab_num%5D=&search%5Bfile_num%5D=&search%5Bcounty_id%5D=&log_"
+                                                                                 "current_user=hlord")
     # Click on case.
 
     try_click_on_load("/html/body/div[1]/div[2]/div[1]/table/tbody/tr/th/div[2]/table/tbody/tr[3]/td[1]/span/a")
 
     # Now, get the documents page for this case.
-
-    documentsPage = driver.current_url + "/documents/new?document_template_id=20426"
+    casePage = driver.current_url
+    documentsPage = casePage + "/documents/new?document_template_id=20426"
 
     # Open new tab
 
@@ -123,15 +133,15 @@ while continueLoop:
     # Set new tab as focused tab
     driver.switch_to.window(driver.window_handles[-1])
 
-
     # Open documents page
-    driver.execute_script("window.open(\'"+documentsPage+"\')")
+    driver.execute_script("window.open(\'" + documentsPage + "\')")
 
     if int(numJTDates) == 2:
-        date = calendar.month_name[int(jtDateSecond[0]+jtDateSecond[1])]+" "+jtDateSecond[3]+jtDateSecond[4]+", "+jtDateSecond[6:10]
+        date = calendar.month_name[int(jtDateSecond[0] + jtDateSecond[1])] + " " + jtDateSecond[3] + jtDateSecond[
+            4] + ", " + jtDateSecond[6:10]
         print(date)
         driver.switch_to.window(driver.window_handles[1])
-        try_text_on_load("//*[@id=\"parameter_32313\"]",date)
+        try_text_on_load("//*[@id=\"parameter_32313\"]", date)
     # Switch back to first tab after
 
     while True:
@@ -157,8 +167,3 @@ while continueLoop:
             break
         else:
             print("Please enter a valid response.")
-
-
-
-
-
