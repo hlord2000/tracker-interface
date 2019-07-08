@@ -13,11 +13,11 @@ from selenium import *
 
 
 def login(user, pwd):
-    # Login.
-    try_click_on_load("//*[@id=\"memo\"]/p[3]/a")
-    try_text_on_load("//*[@id=\"user_login\"]", user)
-    try_text_on_load("//*[@id=\"user_password\"]", pwd)
-    driver.execute_script("window.alert = function() {};")
+    try:
+        try_click_on_load("//*[@id=\"memo\"]/p[3]/a")
+        try_text_on_load("//*[@id=\"user_login\"]", user)
+        try_text_on_load("//*[@id=\"user_password\"]", pwd)
+        driver.execute_script("window.alert = function() {};")
 
 
 def try_link_follow(linkFollow, waitElement):
@@ -250,8 +250,11 @@ jobMakerLayout = [
      sg.Button(button_text="Add victim services?",
                button_color=('#FFFFFF', '#7766E8'),
                visible=False, key='VSERV'),
-     sg.Column(cancelButton)],
-    [sg.Text('Evidence request form already made.', visible=False, key='ERQPRESENT')]
+     sg.Column(cancelButton)]
+]
+
+popupOnError = [
+    []
 ]
 
 window = sg.Window('Tracker Interface - Case Search', icon="SEAL.jpg").Layout(jobMakerLayout)
@@ -264,9 +267,6 @@ while True:
         exit()
     # Makes button invisible again.
     print(values)
-    window.Element('ERQPRESENT').Update(visible=False)
-    window.Element('VSERV').Update(visible=False)
-    window.VisibilityChanged()
     # Brings web browser back into view.
     driver.set_window_position(0, 0)
     if values[2]:
@@ -278,11 +278,17 @@ while True:
     elif values[5]:
         go_to_case(values)
         if try_find_element("//*[contains(text(), 'Evidence Request Form 9-5-17')]"):
-            window.Element('ERQPRESENT').Update(visible=True)
-            break
+            sg.Popup("Evidence request already created.",
+                     title='Tracker Interface - Case Search',
+                     icon="SEAL.jpg",
+                     keep_on_top=True,
+                     line_width=40,
+
+                     )
+            continue
         else:
             erq_setup("/documents/new?document_template_id=17572")
-
+        docPath = os.path.expandvars(r'%LOCALAPPDATA%\Temp\trackerhelper')
 
     elif values[6]:
         letter_setup("Case Status letter sent.", "/documents/new?document_template_id=19308")
