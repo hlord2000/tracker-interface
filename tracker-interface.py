@@ -8,16 +8,17 @@ from selenium.webdriver.support.ui import Select
 import time
 import os
 import datetime
+import fnmatch
+import psutil
 from selenium import *
 # DEF FUNCTIONS #
 
 
 def login(user, pwd):
-    try:
-        try_click_on_load("//*[@id=\"memo\"]/p[3]/a")
-        try_text_on_load("//*[@id=\"user_login\"]", user)
-        try_text_on_load("//*[@id=\"user_password\"]", pwd)
-        driver.execute_script("window.alert = function() {};")
+    try_click_on_load("//*[@id=\"memo\"]/p[3]/a")
+    try_text_on_load("//*[@id=\"user_login\"]", user)
+    try_text_on_load("//*[@id=\"user_password\"]", pwd)
+    driver.execute_script("window.alert = function() {};")
 
 
 def try_link_follow(linkFollow, waitElement):
@@ -168,7 +169,6 @@ def erq_setup(pageURL):
     elem.send_keys(dates)
     time.sleep(.01)
     elem.send_keys(Keys.RETURN)
-    driver.switch_to.window(driver.window_handles[0])
 
 
 def find_later_date(distanceInTime):
@@ -260,7 +260,8 @@ popupOnError = [
 window = sg.Window('Tracker Interface - Case Search', icon="SEAL.jpg").Layout(jobMakerLayout)
 while True:
     event, values = window.Read()
-    print(event)
+    driver.switch_to.window(driver.window_handles[0])
+    driver.get("http://tracker4.pacga.org")
     if event[0] == "C":
         window.Close()
         driver.quit()
@@ -288,7 +289,85 @@ while True:
             continue
         else:
             erq_setup("/documents/new?document_template_id=17572")
-        docPath = os.path.expandvars(r'%LOCALAPPDATA%\Temp\trackerhelper')
+
+            # Click on word icon.
+            try_click_on_load("/html/body/div[1]/div[2]/div[1]/table/tbody/tr/th/table/tbody/tr[2]/td[2]/span/img")
+
+            # Wait for launch of office program.
+            time.sleep(1)
+            # Kill program.
+            try:
+                os.system("TASKKILL /F /IM soffice.bin")
+            except:
+                pass
+            try:
+                os.system("TASKKILL /F /IM winword.exe")
+            except:
+                pass
+
+            for file in os.listdir(os.path.expandvars(r'%LOCALAPPDATA%\Temp\trackerhelper')):
+
+                # Record which file is being operated on.
+                print(file)
+
+                # Gives absolute path for file.
+                fileDir = os.path.expandvars(r'%LOCALAPPDATA%\Temp\trackerhelper')+ "\\" + file
+
+                # Checks if file selected is rtf.
+                if fnmatch.fnmatch(file, '*.rtf'):
+                    print("Done once.")
+                    # Selects rtf file.
+                    fileToOpen = open(fileDir)
+
+                    # Reads rtf file.
+                    fileData = fileToOpen.read()
+                    # Closes IO stream
+                    fileToOpen.close()
+                    time.sleep(1)
+                    # Deletes file.
+                    os.remove(fileDir)
+
+                    # Opens criteria for search.
+                    criteria = open("searchCriteriaEvidenceRequest.txt", 'r')
+                    criteriaData = criteria.read()
+                    criteria.close()
+
+                    # Opens the search criterion's replacement
+                    replacement = open('replaceEvidenceRequest.txt', 'r')
+                    replacementData = replacement.read()
+                    replacement.close()
+
+                    # Replaces the data.
+                    newData = fileData.replace(criteriaData, replacementData)
+                    print(newData)
+
+                    # Write data to file with same name.
+                    f = open(fileDir, 'x')
+                    f.write(newData)
+                    f.close()
+                    while not try_find_element("//*[@id=\"save_button\"]"):
+                        elem = driver.find_element_by_xpath("//*[@id=\"save_button\"]")
+                        elem.click()
+
+                else:
+                    print('File not .rtf.')
+                    pass
+
+            driver.switch_to.window(driver.window_handles[0])
+            try_click_on_load("/html/body/div[1]/div[2]/div[1]/table/tbody/tr/th/div[8]/"
+                              "table/tbody/tr/td/table/tbody/tr/td[2]/a[3]")
+            try_text_on_load("//*[@id=\"action_event_event_date\"]", find_later_date(14))
+
+            # Select dropdown options.
+            while not try_find_element('//*[@id=\"action_event_event_type_kwid\"]'):
+                elem = Select(driver.find_element_by_xpath('//*[@id=\"action_event_event_type_kwid\"]'))
+                elem.select_by_value('2722')
+            while not try_find_element('//*[@id="action_event_staff_id"]'):
+                elem = Select(driver.find_element_by_xpath('//*[@id=\"action_event_staff_id\"]'))
+                elem.select_by_value('5801262')
+
+            # Save action item.
+            try_click_on_load('/html/body/div[1]/div[2]/div[1]/table/tbody/tr/th/div[5]/form/table/tbody/tr/td/input')
 
     elif values[6]:
         letter_setup("Case Status letter sent.", "/documents/new?document_template_id=19308")
