@@ -15,7 +15,6 @@ from selenium import *
 
 
 def login(user, pwd):
-    try_click_on_load("//*[@id=\"memo\"]/p[3]/a")
     try_text_on_load("//*[@id=\"user_login\"]", user)
     try_text_on_load("//*[@id=\"user_password\"]", pwd)
     driver.execute_script("window.alert = function() {};")
@@ -50,7 +49,7 @@ def try_text_on_load(targetElement, textToBePassed):
 
 def try_click_on_load(waitElement):
     try:
-        element = WebDriverWait(driver, 10).until(
+        element = WebDriverWait(driver, 1).until(
             EC.presence_of_element_located((By.XPATH, waitElement))
         )
     except:
@@ -77,12 +76,13 @@ def search_case_from_case_num(caseNum):
 
 
 def driver_setup():
-    driver.set_window_position(-2000, 0)
     # Install requisite Tracker plugin
     ext_dir = os.path.abspath("trackerhelper5@pacga.org.xpi")
     driver.install_addon(ext_dir, temporary=True)
     # Get tracker homepage
+    driver.minimize_window()
     driver.get("http://tracker4.pacga.org")
+    try_click_on_load("//*[@id=\"memo\"]/p[3]/a")
 
 
 def go_to_case(neededValues):
@@ -91,8 +91,10 @@ def go_to_case(neededValues):
     caseNum = neededValues[1]
     fullCaseNum = "ST-" + str(year) + "-CR-" + str(caseNum)
     search_case_from_case_num(fullCaseNum)
-    try_click_on_load("/html/body/div[1]/div[2]/div[1]/table/tbody/tr/th/div[2]/table/tbody/tr[3]/td[1]/span/a")
-
+    try:
+        try_click_on_load("/html/body/div[1]/div[2]/div[1]/table/tbody/tr/th/div[2]/table/tbody/tr[3]/td[1]/span/a")
+    except:
+        pass
 
 def set_victim_services(textToEnter):
     casePage = driver.current_url
@@ -177,6 +179,62 @@ def find_later_date(distanceInTime):
     formattedRequestByDate = requestByDate[5:7]+"/"+requestByDate[8:10]+"/"+requestByDate[0:4]
     return formattedRequestByDate
 
+
+def split_comma_list(case_numbers_list):
+    split_case_number_string = case_numbers_list.split(",")
+    temp_list = []
+
+    for caseNumber in range(len(split_case_number_string)):
+        new_ints = int(split_case_number_string[int(caseNumber)])
+
+        temp_list.append(new_ints)
+    return temp_list
+
+
+def login_window():
+    submitButton = [
+        [sg.Button(button_text="Submit",
+                   auto_size_button=True,
+                   button_color=('#FFFFFF', '#483D8B'),
+                   focus=True)
+         ]
+    ]
+    cancelButton = [
+        [sg.Button(button_text="Cancel",
+                   auto_size_button=True,
+                   button_color=('#FFFFFF',
+                                 '#483D8B')
+                   )
+         ]
+    ]
+
+    loginLayout = [[sg.Text('Tracker Interface - Login')],
+                   [sg.Text('Username')],
+                   [sg.InputText()],
+                   [sg.Text('Password')],
+                   [sg.InputText(password_char="*")],  # password_char hides text with *
+                   [sg.Column(submitButton),
+                    sg.Column(cancelButton)]
+                   ]
+
+    # Names window as 'Tracker Interface - Login' and assigns its layout to loginLayout.
+    window = sg.Window('Tracker Interface - Login', icon="SEAL.jpg").Layout(loginLayout)
+
+    # Reads button events and values entered, stores them in variables.
+    event, values = window.Read()
+
+    # If cancel button is pressed, the program is closed.
+    if event == "Cancel":
+        print("THIS SHOULD CLOSE")
+        window.Close()
+        exit()
+    elif event == "Submit":
+        window.Close()
+    # Store username and password variables for later use in login.
+
+    return values
+
+
 # END DEF FUNCTIONS #
 
 
@@ -201,40 +259,19 @@ cancelButton = [
      ]
 ]
 
-# Establishes layout for Login form.
-loginLayout = [[sg.Text('Tracker Interface - Login')],
-               [sg.Text('Username')],
-               [sg.InputText()],
-               [sg.Text('Password')],
-               [sg.InputText(password_char="*")],  # password_char hides text with *
-               [sg.Column(submitButton),
-                sg.Column(cancelButton)]
-               ]
-
-# Names window as 'Tracker Interface - Login' and assigns its layout to loginLayout.
-window = sg.Window('Tracker Interface - Login', icon="SEAL.jpg").Layout(loginLayout)
-
-# Reads button events and values entered, stores them in variables.
-event, values = window.Read()
-
-# If cancel button is pressed, the program is closed.
-if event == "Cancel":
-    print("THIS SHOULD CLOSE")
-    window.Close()
-    driver.close()
-    exit()
-elif event == "Submit":
-    window.Close()
-# Store username and password variables for later use in login.
-
-username = values[0]
-password = values[1]
 
 # Login.
-login(username, password)
+while True:
+    credentials = login_window()
+    login(credentials[0], credentials[1])
+    time.sleep(1)
+    if try_find_element("/html/body/div[1]/div[2]/div[1]/div[2]/p/u"):
+        continue
+    else:
+        break
 
 columnTop = [[sg.Text('Tracker Interface - Case Search')],
-             [sg.Text('Year: '), sg.Spin([i for i in range(2000, 2100)], initial_value=2019)],
+             [sg.Text('Year: '), sg.Spin([i for i in range(2000, 2100)], initial_value=datetime.date.today().year)],
              [sg.Text('Case Number: '), sg.InputText()]]
 
 jobMakerLayout = [
@@ -244,8 +281,9 @@ jobMakerLayout = [
     [sg.Radio('Display Case', "RADIO1", default=True),
      sg.Radio('CC-JT Letter Creator', "RADIO1"),
      sg.Radio('CC Letter Creator', "RADIO1"),
-     sg.Radio('Evidence Request Creator (WIP)', "RADIO1")],
-    [sg.Radio('Case Status/Change of Plea Updater', "RADIO1")],
+     sg.Radio('Evidence Request Creator', "RADIO1"),
+     sg.Radio('Case Status/Change of Plea Updater', "RADIO1")
+     ],
     [sg.Column(submitButton),
      sg.Button(button_text="Add victim services?",
                button_color=('#FFFFFF', '#7766E8'),
@@ -261,16 +299,19 @@ window = sg.Window('Tracker Interface - Case Search', icon="SEAL.jpg").Layout(jo
 while True:
     event, values = window.Read()
     driver.switch_to.window(driver.window_handles[0])
-    driver.get("http://tracker4.pacga.org")
-    if event[0] == "C":
+    driver.get("http://tracker4.pacga.org/home")
+    driver.maximize_window()
+    # Makes button invisible again.
+    print(values, event)
+    if event is None:
         window.Close()
         driver.quit()
         exit()
-    # Makes button invisible again.
-    print(values)
-    # Brings web browser back into view.
-    driver.set_window_position(0, 0)
-    if values[2]:
+    elif event[0] == "C":
+        window.Close()
+        driver.quit()
+        exit()
+    elif values[2]:
         go_to_case(values)
     elif values[3]:
         letter_setup("CC-JT letter sent.", "/documents/new?document_template_id=20426")
@@ -356,15 +397,24 @@ while True:
             driver.switch_to.window(driver.window_handles[0])
             try_click_on_load("/html/body/div[1]/div[2]/div[1]/table/tbody/tr/th/div[8]/"
                               "table/tbody/tr/td/table/tbody/tr/td[2]/a[3]")
-            try_text_on_load("//*[@id=\"action_event_event_date\"]", find_later_date(14))
-
             # Select dropdown options.
-            while not try_find_element('//*[@id=\"action_event_event_type_kwid\"]'):
-                elem = Select(driver.find_element_by_xpath('//*[@id=\"action_event_event_type_kwid\"]'))
-                elem.select_by_value('2722')
-            while not try_find_element('//*[@id="action_event_staff_id"]'):
-                elem = Select(driver.find_element_by_xpath('//*[@id=\"action_event_staff_id\"]'))
-                elem.select_by_value('5801262')
+            select = Select(driver.find_element_by_xpath("//*[@id=\"action_event_event_type_kwid\"]"))
+            select.select_by_value('2722')
+            select = Select(driver.find_element_by_xpath("//*[@id=\"action_event_staff_id\"]"))
+            select.select_by_value('5801262')
+
+            targetElement = "//*[@id=\"action_event_event_date\"]"
+            try:
+                element = WebDriverWait(driver, 10).until(
+                    EC.presence_of_element_located((By.XPATH, targetElement))
+                )
+            except:
+                print("FAILED TO ENTER TEXT")
+            finally:
+                elem = driver.find_element_by_xpath(targetElement)
+                elem.clear()
+                elem.send_keys(find_later_date(14))
+                time.sleep(.01)
 
             # Save action item.
             try_click_on_load('/html/body/div[1]/div[2]/div[1]/table/tbody/tr/th/div[5]/form/table/tbody/tr/td/input')
