@@ -1,24 +1,16 @@
 ('C:\\Users\\Helmut '
  'Lord\\PycharmProjects\\tracker-interface\\build\\tracker-interface\\PYZ-00.pyz',
- [('ntpath',
+ [('_py_abc',
+   'c:\\users\\helmut '
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\_py_abc.py',
+   'PYMODULE'),
+  ('ntpath',
    'c:\\users\\helmut '
    'lord\\appdata\\local\\programs\\python\\python37\\lib\\ntpath.py',
    'PYMODULE'),
   ('_strptime',
    'c:\\users\\helmut '
    'lord\\appdata\\local\\programs\\python\\python37\\lib\\_strptime.py',
-   'PYMODULE'),
-  ('stringprep',
-   'c:\\users\\helmut '
-   'lord\\appdata\\local\\programs\\python\\python37\\lib\\stringprep.py',
-   'PYMODULE'),
-  ('_py_abc',
-   'c:\\users\\helmut '
-   'lord\\appdata\\local\\programs\\python\\python37\\lib\\_py_abc.py',
-   'PYMODULE'),
-  ('typing',
-   'c:\\users\\helmut '
-   'lord\\appdata\\local\\programs\\python\\python37\\lib\\typing.py',
    'PYMODULE'),
   ('tracemalloc',
    'c:\\users\\helmut '
@@ -240,10 +232,6 @@
    'c:\\users\\helmut '
    'lord\\appdata\\local\\programs\\python\\python37\\lib\\uu.py',
    'PYMODULE'),
-  ('quopri',
-   'c:\\users\\helmut '
-   'lord\\appdata\\local\\programs\\python\\python37\\lib\\quopri.py',
-   'PYMODULE'),
   ('email.feedparser',
    'c:\\users\\helmut '
    'lord\\appdata\\local\\programs\\python\\python37\\lib\\email\\feedparser.py',
@@ -291,10 +279,6 @@
   ('email.charset',
    'c:\\users\\helmut '
    'lord\\appdata\\local\\programs\\python\\python37\\lib\\email\\charset.py',
-   'PYMODULE'),
-  ('base64',
-   'c:\\users\\helmut '
-   'lord\\appdata\\local\\programs\\python\\python37\\lib\\base64.py',
    'PYMODULE'),
   ('email._encoded_words',
    'c:\\users\\helmut '
@@ -348,17 +332,9 @@
    'c:\\users\\helmut '
    'lord\\appdata\\local\\programs\\python\\python37\\lib\\email\\message.py',
    'PYMODULE'),
-  ('bz2',
-   'c:\\users\\helmut '
-   'lord\\appdata\\local\\programs\\python\\python37\\lib\\bz2.py',
-   'PYMODULE'),
   ('lzma',
    'c:\\users\\helmut '
    'lord\\appdata\\local\\programs\\python\\python37\\lib\\lzma.py',
-   'PYMODULE'),
-  ('_compression',
-   'c:\\users\\helmut '
-   'lord\\appdata\\local\\programs\\python\\python37\\lib\\_compression.py',
    'PYMODULE'),
   ('gzip',
    'c:\\users\\helmut '
@@ -391,10 +367,6 @@
   ('pydoc',
    'c:\\users\\helmut '
    'lord\\appdata\\local\\programs\\python\\python37\\lib\\pydoc.py',
-   'PYMODULE'),
-  ('getopt',
-   'c:\\users\\helmut '
-   'lord\\appdata\\local\\programs\\python\\python37\\lib\\getopt.py',
    'PYMODULE'),
   ('pdb',
    'c:\\users\\helmut '
@@ -436,10 +408,6 @@
    'c:\\users\\helmut '
    'lord\\appdata\\local\\programs\\python\\python37\\lib\\unittest\\suite.py',
    'PYMODULE'),
-  ('fnmatch',
-   'c:\\users\\helmut '
-   'lord\\appdata\\local\\programs\\python\\python37\\lib\\fnmatch.py',
-   'PYMODULE'),
   ('unittest.loader',
    'c:\\users\\helmut '
    'lord\\appdata\\local\\programs\\python\\python37\\lib\\unittest\\loader.py',
@@ -464,6 +432,34 @@
    'c:\\users\\helmut '
    'lord\\appdata\\local\\programs\\python\\python37\\lib\\doctest.py',
    'PYMODULE'),
+  ('token',
+   'c:\\users\\helmut '
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\token.py',
+   'PYMODULE'),
+  ('textwrap',
+   'c:\\users\\helmut '
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\textwrap.py',
+   'PYMODULE'),
+  ('argparse',
+   'c:\\users\\helmut '
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\argparse.py',
+   'PYMODULE'),
+  ('tokenize',
+   'c:\\users\\helmut '
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\tokenize.py',
+   'PYMODULE'),
+  ('_compression',
+   'c:\\users\\helmut '
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\_compression.py',
+   'PYMODULE'),
+  ('bz2',
+   'c:\\users\\helmut '
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\bz2.py',
+   'PYMODULE'),
+  ('base64',
+   'c:\\users\\helmut '
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\base64.py',
+   'PYMODULE'),
   ('stat',
    'c:\\users\\helmut '
    'lord\\appdata\\local\\programs\\python\\python37\\lib\\stat.py',
@@ -479,10 +475,6 @@
   ('signal',
    'c:\\users\\helmut '
    'lord\\appdata\\local\\programs\\python\\python37\\lib\\signal.py',
-   'PYMODULE'),
-  ('contextlib',
-   'c:\\users\\helmut '
-   'lord\\appdata\\local\\programs\\python\\python37\\lib\\contextlib.py',
    'PYMODULE'),
   ('_threading_local',
    'c:\\users\\helmut '
@@ -500,10 +492,6 @@
    'c:\\users\\helmut '
    'lord\\appdata\\local\\programs\\python\\python37\\lib\\subprocess.py',
    'PYMODULE'),
-  ('token',
-   'c:\\users\\helmut '
-   'lord\\appdata\\local\\programs\\python\\python37\\lib\\token.py',
-   'PYMODULE'),
   ('struct',
    'c:\\users\\helmut '
    'lord\\appdata\\local\\programs\\python\\python37\\lib\\struct.py',
@@ -512,21 +500,101 @@
    'c:\\users\\helmut '
    'lord\\appdata\\local\\programs\\python\\python37\\lib\\gettext.py',
    'PYMODULE'),
+  ('getopt',
+   'c:\\users\\helmut '
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\getopt.py',
+   'PYMODULE'),
+  ('quopri',
+   'c:\\users\\helmut '
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\quopri.py',
+   'PYMODULE'),
+  ('stringprep',
+   'c:\\users\\helmut '
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\stringprep.py',
+   'PYMODULE'),
+  ('contextlib',
+   'c:\\users\\helmut '
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\contextlib.py',
+   'PYMODULE'),
+  ('typing',
+   'c:\\users\\helmut '
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\typing.py',
+   'PYMODULE'),
   ('copy',
    'c:\\users\\helmut '
    'lord\\appdata\\local\\programs\\python\\python37\\lib\\copy.py',
    'PYMODULE'),
-  ('textwrap',
+  ('psutil',
    'c:\\users\\helmut '
-   'lord\\appdata\\local\\programs\\python\\python37\\lib\\textwrap.py',
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\psutil\\__init__.py',
    'PYMODULE'),
-  ('argparse',
+  ('psutil._psaix',
    'c:\\users\\helmut '
-   'lord\\appdata\\local\\programs\\python\\python37\\lib\\argparse.py',
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\psutil\\_psaix.py',
    'PYMODULE'),
-  ('tokenize',
+  ('psutil._pssunos',
    'c:\\users\\helmut '
-   'lord\\appdata\\local\\programs\\python\\python37\\lib\\tokenize.py',
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\psutil\\_pssunos.py',
+   'PYMODULE'),
+  ('psutil._psbsd',
+   'c:\\users\\helmut '
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\psutil\\_psbsd.py',
+   'PYMODULE'),
+  ('xml.etree.ElementTree',
+   'c:\\users\\helmut '
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\xml\\etree\\ElementTree.py',
+   'PYMODULE'),
+  ('xml.etree.ElementInclude',
+   'c:\\users\\helmut '
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\xml\\etree\\ElementInclude.py',
+   'PYMODULE'),
+  ('xml.etree.cElementTree',
+   'c:\\users\\helmut '
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\xml\\etree\\cElementTree.py',
+   'PYMODULE'),
+  ('xml.etree.ElementPath',
+   'c:\\users\\helmut '
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\xml\\etree\\ElementPath.py',
+   'PYMODULE'),
+  ('xml.etree',
+   'c:\\users\\helmut '
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\xml\\etree\\__init__.py',
+   'PYMODULE'),
+  ('psutil._psosx',
+   'c:\\users\\helmut '
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\psutil\\_psosx.py',
+   'PYMODULE'),
+  ('psutil._pswindows',
+   'c:\\users\\helmut '
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\psutil\\_pswindows.py',
+   'PYMODULE'),
+  ('psutil._pslinux',
+   'c:\\users\\helmut '
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\psutil\\_pslinux.py',
+   'PYMODULE'),
+  ('psutil._psposix',
+   'c:\\users\\helmut '
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\psutil\\_psposix.py',
+   'PYMODULE'),
+  ('psutil._compat',
+   'c:\\users\\helmut '
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\psutil\\_compat.py',
+   'PYMODULE'),
+  ('dummy_threading',
+   'c:\\users\\helmut '
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\dummy_threading.py',
+   'PYMODULE'),
+  ('_dummy_thread',
+   'c:\\users\\helmut '
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\_dummy_thread.py',
+   'PYMODULE'),
+  ('psutil._common',
+   'c:\\users\\helmut '
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\psutil\\_common.py',
+   'PYMODULE'),
+  ('fnmatch',
+   'c:\\users\\helmut '
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\fnmatch.py',
    'PYMODULE'),
   ('datetime',
    'c:\\users\\helmut '
