@@ -227,6 +227,7 @@ def login_window():
     if event == "Cancel":
         print("THIS SHOULD CLOSE")
         window.Close()
+        driver.close()
         exit()
     elif event == "Submit":
         window.Close()
@@ -239,6 +240,7 @@ def login_window():
 
 
 # Initialize the browser
+args = ["hide_console"]
 driver = webdriver.Firefox(executable_path='geckodriver.exe')
 driver_setup()
 
