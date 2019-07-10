@@ -3,7 +3,7 @@
  False,
  False,
  False,
- 'favicon.ico',
+ None,
  None,
  False,
  False,
@@ -42,93 +42,93 @@
    'C:\\Users\\Helmut '
    'Lord\\PycharmProjects\\tracker-interface\\tracker-interface.py',
    'PYSOURCE'),
-  ('VCRUNTIME140.dll',
-   'c:\\users\\helmut '
-   'lord\\appdata\\local\\programs\\python\\python37\\VCRUNTIME140.dll',
-   'BINARY'),
   ('python37.dll',
    'c:\\users\\helmut '
    'lord\\appdata\\local\\programs\\python\\python37\\python37.dll',
+   'BINARY'),
+  ('VCRUNTIME140.dll',
+   'c:\\users\\helmut '
+   'lord\\appdata\\local\\programs\\python\\python37\\VCRUNTIME140.dll',
    'BINARY'),
   ('PyQt5\\Qt\\bin\\libGLESv2.dll',
    'C:\\users\\helmut '
    'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\bin\\libGLESv2.dll',
    'BINARY'),
-  ('PyQt5\\Qt\\plugins\\imageformats\\qjpeg.dll',
+  ('PyQt5\\Qt\\plugins\\imageformats\\qsvg.dll',
    'C:\\users\\helmut '
-   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\plugins\\imageformats\\qjpeg.dll',
-   'BINARY'),
-  ('PyQt5\\Qt\\plugins\\imageformats\\qwbmp.dll',
-   'C:\\users\\helmut '
-   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\plugins\\imageformats\\qwbmp.dll',
-   'BINARY'),
-  ('PyQt5\\Qt\\bin\\opengl32sw.dll',
-   'C:\\users\\helmut '
-   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\bin\\opengl32sw.dll',
-   'BINARY'),
-  ('PyQt5\\Qt\\bin\\libEGL.dll',
-   'C:\\users\\helmut '
-   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\bin\\libEGL.dll',
-   'BINARY'),
-  ('PyQt5\\Qt\\plugins\\platforms\\qoffscreen.dll',
-   'C:\\users\\helmut '
-   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\plugins\\platforms\\qoffscreen.dll',
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\plugins\\imageformats\\qsvg.dll',
    'BINARY'),
   ('PyQt5\\Qt\\bin\\d3dcompiler_47.dll',
    'C:\\users\\helmut '
    'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\bin\\d3dcompiler_47.dll',
    'BINARY'),
-  ('PyQt5\\Qt\\plugins\\imageformats\\qwebp.dll',
-   'C:\\users\\helmut '
-   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\plugins\\imageformats\\qwebp.dll',
-   'BINARY'),
-  ('PyQt5\\Qt\\plugins\\platforms\\qwindows.dll',
-   'C:\\users\\helmut '
-   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\plugins\\platforms\\qwindows.dll',
-   'BINARY'),
-  ('PyQt5\\Qt\\plugins\\imageformats\\qicns.dll',
-   'C:\\users\\helmut '
-   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\plugins\\imageformats\\qicns.dll',
-   'BINARY'),
-  ('PyQt5\\Qt\\plugins\\iconengines\\qsvgicon.dll',
-   'C:\\users\\helmut '
-   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\plugins\\iconengines\\qsvgicon.dll',
-   'BINARY'),
   ('PyQt5\\Qt\\plugins\\platforms\\qwebgl.dll',
    'C:\\users\\helmut '
    'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\plugins\\platforms\\qwebgl.dll',
    'BINARY'),
-  ('PyQt5\\Qt\\plugins\\imageformats\\qtiff.dll',
+  ('PyQt5\\Qt\\plugins\\platforms\\qoffscreen.dll',
    'C:\\users\\helmut '
-   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\plugins\\imageformats\\qtiff.dll',
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\plugins\\platforms\\qoffscreen.dll',
    'BINARY'),
-  ('PyQt5\\Qt\\plugins\\imageformats\\qgif.dll',
+  ('PyQt5\\Qt\\plugins\\imageformats\\qjpeg.dll',
    'C:\\users\\helmut '
-   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\plugins\\imageformats\\qgif.dll',
-   'BINARY'),
-  ('PyQt5\\Qt\\plugins\\imageformats\\qico.dll',
-   'C:\\users\\helmut '
-   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\plugins\\imageformats\\qico.dll',
-   'BINARY'),
-  ('PyQt5\\Qt\\plugins\\platforms\\qminimal.dll',
-   'C:\\users\\helmut '
-   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\plugins\\platforms\\qminimal.dll',
-   'BINARY'),
-  ('PyQt5\\Qt\\plugins\\styles\\qwindowsvistastyle.dll',
-   'C:\\users\\helmut '
-   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\plugins\\styles\\qwindowsvistastyle.dll',
-   'BINARY'),
-  ('PyQt5\\Qt\\plugins\\imageformats\\qsvg.dll',
-   'C:\\users\\helmut '
-   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\plugins\\imageformats\\qsvg.dll',
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\plugins\\imageformats\\qjpeg.dll',
    'BINARY'),
   ('PyQt5\\Qt\\plugins\\platformthemes\\qxdgdesktopportal.dll',
    'C:\\users\\helmut '
    'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\plugins\\platformthemes\\qxdgdesktopportal.dll',
    'BINARY'),
+  ('PyQt5\\Qt\\plugins\\iconengines\\qsvgicon.dll',
+   'C:\\users\\helmut '
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\plugins\\iconengines\\qsvgicon.dll',
+   'BINARY'),
+  ('PyQt5\\Qt\\bin\\opengl32sw.dll',
+   'C:\\users\\helmut '
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\bin\\opengl32sw.dll',
+   'BINARY'),
+  ('PyQt5\\Qt\\plugins\\imageformats\\qtiff.dll',
+   'C:\\users\\helmut '
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\plugins\\imageformats\\qtiff.dll',
+   'BINARY'),
+  ('PyQt5\\Qt\\plugins\\imageformats\\qicns.dll',
+   'C:\\users\\helmut '
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\plugins\\imageformats\\qicns.dll',
+   'BINARY'),
   ('PyQt5\\Qt\\plugins\\imageformats\\qtga.dll',
    'C:\\users\\helmut '
    'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\plugins\\imageformats\\qtga.dll',
+   'BINARY'),
+  ('PyQt5\\Qt\\plugins\\styles\\qwindowsvistastyle.dll',
+   'C:\\users\\helmut '
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\plugins\\styles\\qwindowsvistastyle.dll',
+   'BINARY'),
+  ('PyQt5\\Qt\\plugins\\imageformats\\qgif.dll',
+   'C:\\users\\helmut '
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\plugins\\imageformats\\qgif.dll',
+   'BINARY'),
+  ('PyQt5\\Qt\\plugins\\platforms\\qwindows.dll',
+   'C:\\users\\helmut '
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\plugins\\platforms\\qwindows.dll',
+   'BINARY'),
+  ('PyQt5\\Qt\\plugins\\imageformats\\qwbmp.dll',
+   'C:\\users\\helmut '
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\plugins\\imageformats\\qwbmp.dll',
+   'BINARY'),
+  ('PyQt5\\Qt\\bin\\libEGL.dll',
+   'C:\\users\\helmut '
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\bin\\libEGL.dll',
+   'BINARY'),
+  ('PyQt5\\Qt\\plugins\\platforms\\qminimal.dll',
+   'C:\\users\\helmut '
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\plugins\\platforms\\qminimal.dll',
+   'BINARY'),
+  ('PyQt5\\Qt\\plugins\\imageformats\\qwebp.dll',
+   'C:\\users\\helmut '
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\plugins\\imageformats\\qwebp.dll',
+   'BINARY'),
+  ('PyQt5\\Qt\\plugins\\imageformats\\qico.dll',
+   'C:\\users\\helmut '
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\plugins\\imageformats\\qico.dll',
    'BINARY'),
   ('_ssl',
    'c:\\users\\helmut '
@@ -198,21 +198,21 @@
    'C:\\users\\helmut '
    'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\bin\\MSVCP140.dll',
    'BINARY'),
-  ('Qt5Core.dll',
+  ('Qt5Svg.dll',
    'c:\\users\\helmut '
-   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\bin\\qt5core.dll',
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\bin\\qt5svg.dll',
    'BINARY'),
   ('Qt5Gui.dll',
    'c:\\users\\helmut '
    'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\bin\\qt5gui.dll',
    'BINARY'),
-  ('libGLESv2.dll',
-   'C:\\users\\helmut '
-   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\bin\\libGLESv2.dll',
-   'BINARY'),
-  ('Qt5Svg.dll',
+  ('Qt5Core.dll',
    'c:\\users\\helmut '
-   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\bin\\qt5svg.dll',
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\bin\\qt5core.dll',
+   'BINARY'),
+  ('Qt5Network.dll',
+   'c:\\users\\helmut '
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\bin\\qt5network.dll',
    'BINARY'),
   ('Qt5WebSockets.dll',
    'c:\\users\\helmut '
@@ -222,17 +222,17 @@
    'c:\\users\\helmut '
    'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\bin\\qt5quick.dll',
    'BINARY'),
-  ('Qt5Network.dll',
+  ('Qt5DBus.dll',
    'c:\\users\\helmut '
-   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\bin\\qt5network.dll',
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\bin\\qt5dbus.dll',
    'BINARY'),
   ('Qt5Widgets.dll',
    'c:\\users\\helmut '
    'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\bin\\qt5widgets.dll',
    'BINARY'),
-  ('Qt5DBus.dll',
-   'c:\\users\\helmut '
-   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\bin\\qt5dbus.dll',
+  ('libGLESv2.dll',
+   'C:\\users\\helmut '
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\bin\\libGLESv2.dll',
    'BINARY'),
   ('libcrypto-1_1-x64.dll',
    'c:\\users\\helmut '
@@ -254,117 +254,117 @@
    'C:\\Users\\Helmut '
    'Lord\\PycharmProjects\\tracker-interface\\build\\tracker-interface\\base_library.zip',
    'DATA'),
-  ('PyQt5\\Qt\\translations\\qtbase_ru.qm',
+  ('PyQt5\\Qt\\translations\\qtbase_ca.qm',
    'C:\\users\\helmut '
-   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\translations\\qtbase_ru.qm',
-   'DATA'),
-  ('selenium\\webdriver\\remote\\getAttribute.js',
-   'c:\\users\\helmut '
-   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\selenium\\webdriver\\remote\\getAttribute.js',
-   'DATA'),
-  ('PyQt5\\Qt\\translations\\qtbase_de.qm',
-   'C:\\users\\helmut '
-   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\translations\\qtbase_de.qm',
-   'DATA'),
-  ('PyQt5\\Qt\\translations\\qtbase_ja.qm',
-   'C:\\users\\helmut '
-   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\translations\\qtbase_ja.qm',
-   'DATA'),
-  ('PyQt5\\Qt\\translations\\qtbase_bg.qm',
-   'C:\\users\\helmut '
-   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\translations\\qtbase_bg.qm',
-   'DATA'),
-  ('selenium\\webdriver\\firefox\\webdriver.xpi',
-   'c:\\users\\helmut '
-   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\selenium\\webdriver\\firefox\\webdriver.xpi',
-   'DATA'),
-  ('PyQt5\\Qt\\translations\\qtbase_uk.qm',
-   'C:\\users\\helmut '
-   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\translations\\qtbase_uk.qm',
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\translations\\qtbase_ca.qm',
    'DATA'),
   ('selenium\\webdriver\\firefox\\x86\\x_ignore_nofocus.so',
    'c:\\users\\helmut '
    'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\selenium\\webdriver\\firefox\\x86\\x_ignore_nofocus.so',
    'DATA'),
-  ('selenium\\webdriver\\firefox\\amd64\\x_ignore_nofocus.so',
-   'c:\\users\\helmut '
-   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\selenium\\webdriver\\firefox\\amd64\\x_ignore_nofocus.so',
-   'DATA'),
-  ('PyQt5\\Qt\\translations\\qtbase_gd.qm',
-   'C:\\users\\helmut '
-   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\translations\\qtbase_gd.qm',
-   'DATA'),
-  ('PyQt5\\Qt\\translations\\qtbase_it.qm',
-   'C:\\users\\helmut '
-   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\translations\\qtbase_it.qm',
-   'DATA'),
-  ('PyQt5\\Qt\\translations\\qtbase_fr.qm',
-   'C:\\users\\helmut '
-   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\translations\\qtbase_fr.qm',
-   'DATA'),
-  ('PyQt5\\Qt\\translations\\qtbase_es.qm',
-   'C:\\users\\helmut '
-   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\translations\\qtbase_es.qm',
-   'DATA'),
   ('PyQt5\\Qt\\translations\\qtbase_fi.qm',
    'C:\\users\\helmut '
    'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\translations\\qtbase_fi.qm',
    'DATA'),
-  ('selenium\\webdriver\\firefox\\webdriver_prefs.json',
+  ('selenium\\webdriver\\remote\\getAttribute.js',
    'c:\\users\\helmut '
-   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\selenium\\webdriver\\firefox\\webdriver_prefs.json',
-   'DATA'),
-  ('PyQt5\\Qt\\translations\\qtbase_ar.qm',
-   'C:\\users\\helmut '
-   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\translations\\qtbase_ar.qm',
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\selenium\\webdriver\\remote\\getAttribute.js',
    'DATA'),
   ('PyQt5\\Qt\\translations\\qtbase_ko.qm',
    'C:\\users\\helmut '
    'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\translations\\qtbase_ko.qm',
    'DATA'),
-  ('selenium\\webdriver\\remote\\isDisplayed.js',
-   'c:\\users\\helmut '
-   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\selenium\\webdriver\\remote\\isDisplayed.js',
-   'DATA'),
-  ('PyQt5\\Qt\\translations\\qtbase_he.qm',
+  ('PyQt5\\Qt\\translations\\qtbase_bg.qm',
    'C:\\users\\helmut '
-   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\translations\\qtbase_he.qm',
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\translations\\qtbase_bg.qm',
    'DATA'),
-  ('PyQt5\\Qt\\translations\\qtbase_cs.qm',
+  ('PyQt5\\Qt\\translations\\qtbase_ru.qm',
    'C:\\users\\helmut '
-   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\translations\\qtbase_cs.qm',
-   'DATA'),
-  ('PyQt5\\Qt\\translations\\qtbase_sk.qm',
-   'C:\\users\\helmut '
-   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\translations\\qtbase_sk.qm',
-   'DATA'),
-  ('PyQt5\\Qt\\translations\\qtbase_ca.qm',
-   'C:\\users\\helmut '
-   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\translations\\qtbase_ca.qm',
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\translations\\qtbase_ru.qm',
    'DATA'),
   ('PyQt5\\Qt\\translations\\qtbase_en.qm',
    'C:\\users\\helmut '
    'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\translations\\qtbase_en.qm',
    'DATA'),
+  ('selenium\\webdriver\\remote\\isDisplayed.js',
+   'c:\\users\\helmut '
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\selenium\\webdriver\\remote\\isDisplayed.js',
+   'DATA'),
+  ('PyQt5\\Qt\\translations\\qtbase_it.qm',
+   'C:\\users\\helmut '
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\translations\\qtbase_it.qm',
+   'DATA'),
+  ('selenium\\webdriver\\firefox\\amd64\\x_ignore_nofocus.so',
+   'c:\\users\\helmut '
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\selenium\\webdriver\\firefox\\amd64\\x_ignore_nofocus.so',
+   'DATA'),
   ('PyQt5\\Qt\\translations\\qtbase_hu.qm',
    'C:\\users\\helmut '
    'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\translations\\qtbase_hu.qm',
    'DATA'),
-  ('PyQt5\\Qt\\translations\\qtbase_da.qm',
+  ('PyQt5\\Qt\\translations\\qtbase_uk.qm',
    'C:\\users\\helmut '
-   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\translations\\qtbase_da.qm',
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\translations\\qtbase_uk.qm',
    'DATA'),
-  ('PyQt5\\Qt\\translations\\qtbase_pl.qm',
+  ('PyQt5\\Qt\\translations\\qtbase_es.qm',
    'C:\\users\\helmut '
-   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\translations\\qtbase_pl.qm',
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\translations\\qtbase_es.qm',
+   'DATA'),
+  ('PyQt5\\Qt\\translations\\qtbase_gd.qm',
+   'C:\\users\\helmut '
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\translations\\qtbase_gd.qm',
    'DATA'),
   ('PyQt5\\Qt\\translations\\qtbase_zh_TW.qm',
    'C:\\users\\helmut '
    'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\translations\\qtbase_zh_TW.qm',
    'DATA'),
+  ('PyQt5\\Qt\\translations\\qtbase_sk.qm',
+   'C:\\users\\helmut '
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\translations\\qtbase_sk.qm',
+   'DATA'),
+  ('PyQt5\\Qt\\translations\\qtbase_de.qm',
+   'C:\\users\\helmut '
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\translations\\qtbase_de.qm',
+   'DATA'),
+  ('selenium\\webdriver\\firefox\\webdriver.xpi',
+   'c:\\users\\helmut '
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\selenium\\webdriver\\firefox\\webdriver.xpi',
+   'DATA'),
+  ('PyQt5\\Qt\\translations\\qtbase_ar.qm',
+   'C:\\users\\helmut '
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\translations\\qtbase_ar.qm',
+   'DATA'),
   ('PyQt5\\Qt\\translations\\qtbase_lv.qm',
    'C:\\users\\helmut '
    'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\translations\\qtbase_lv.qm',
+   'DATA'),
+  ('selenium\\webdriver\\firefox\\webdriver_prefs.json',
+   'c:\\users\\helmut '
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\selenium\\webdriver\\firefox\\webdriver_prefs.json',
+   'DATA'),
+  ('PyQt5\\Qt\\translations\\qtbase_da.qm',
+   'C:\\users\\helmut '
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\translations\\qtbase_da.qm',
+   'DATA'),
+  ('PyQt5\\Qt\\translations\\qtbase_ja.qm',
+   'C:\\users\\helmut '
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\translations\\qtbase_ja.qm',
+   'DATA'),
+  ('PyQt5\\Qt\\translations\\qtbase_fr.qm',
+   'C:\\users\\helmut '
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\translations\\qtbase_fr.qm',
+   'DATA'),
+  ('PyQt5\\Qt\\translations\\qtbase_pl.qm',
+   'C:\\users\\helmut '
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\translations\\qtbase_pl.qm',
+   'DATA'),
+  ('PyQt5\\Qt\\translations\\qtbase_cs.qm',
+   'C:\\users\\helmut '
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\translations\\qtbase_cs.qm',
+   'DATA'),
+  ('PyQt5\\Qt\\translations\\qtbase_he.qm',
+   'C:\\users\\helmut '
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyQt5\\Qt\\translations\\qtbase_he.qm',
    'DATA'),
   ('tracker-interface.exe.manifest',
    'C:\\Users\\Helmut '
@@ -376,7 +376,7 @@
  [],
  False,
  False,
- 1562684022,
+ 1562764123,
  [('runw.exe',
    'c:\\users\\helmut '
    'lord\\appdata\\local\\programs\\python\\python37\\lib\\site-packages\\PyInstaller\\bootloader\\Windows-64bit\\runw.exe',

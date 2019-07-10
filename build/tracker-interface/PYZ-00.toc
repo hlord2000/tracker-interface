@@ -12,10 +12,6 @@
    'c:\\users\\helmut '
    'lord\\appdata\\local\\programs\\python\\python37\\lib\\typing.py',
    'PYMODULE'),
-  ('stringprep',
-   'c:\\users\\helmut '
-   'lord\\appdata\\local\\programs\\python\\python37\\lib\\stringprep.py',
-   'PYMODULE'),
   ('tracemalloc',
    'c:\\users\\helmut '
    'lord\\appdata\\local\\programs\\python\\python37\\lib\\tracemalloc.py',
@@ -23,6 +19,10 @@
   ('_py_abc',
    'c:\\users\\helmut '
    'lord\\appdata\\local\\programs\\python\\python37\\lib\\_py_abc.py',
+   'PYMODULE'),
+  ('stringprep',
+   'c:\\users\\helmut '
+   'lord\\appdata\\local\\programs\\python\\python37\\lib\\stringprep.py',
    'PYMODULE'),
   ('__future__',
    'c:\\users\\helmut '

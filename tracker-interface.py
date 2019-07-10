@@ -75,10 +75,13 @@ def search_case_from_case_num(caseNum):
                "5D=&search%5Boca_num%5D=&search%5Bcrimelab_num%5D=&search%5Bfile_num%5D=&search%5Bcounty_id")
 
 
+
 def driver_setup():
     # Install requisite Tracker plugin
-    ext_dir = os.path.abspath("trackerhelper5@pacga.org.xpi")
-    driver.install_addon(ext_dir, temporary=True)
+    ext_dir_tracker = os.path.abspath("trackerhelper5@pacga.org.xpi")
+    #ext_dir_noscript = os.path.abspath("{73a6fe31-595d-460b-a920-fcc0f8843232}.xpi")
+    driver.install_addon(ext_dir_tracker, temporary=True)
+    #driver.install_addon(ext_dir_noscript, temporary=True)
     # Get tracker homepage
     driver.minimize_window()
     driver.get("http://tracker4.pacga.org")
@@ -91,6 +94,7 @@ def go_to_case(neededValues):
     caseNum = neededValues[1]
     fullCaseNum = "ST-" + str(year) + "-CR-" + str(caseNum)
     search_case_from_case_num(fullCaseNum)
+    x = 0
     try:
         try_click_on_load("/html/body/div[1]/div[2]/div[1]/table/tbody/tr/th/div[2]/table/tbody/tr[3]/td[1]/span/a")
     except:
@@ -238,10 +242,17 @@ def login_window():
 
 # END DEF FUNCTIONS #
 
+# Clean up old Gecko Drivers.
+try:
+    os.system("TASKKILL /F /IM geckodriver.exe")
+except:
+    pass
 
 # Initialize the browser
-args = ["hide_console"]
-driver = webdriver.Firefox(executable_path='geckodriver.exe')
+_browser_profile = webdriver.FirefoxProfile()
+_browser_profile.set_preference("dom.webnotifications.enabled", False)
+
+driver = webdriver.Firefox(executable_path='geckodriver.exe', firefox_profile=_browser_profile)
 driver_setup()
 
 # Defines the style for submit and cancel buttons in this program.
@@ -282,9 +293,11 @@ jobMakerLayout = [
     [sg.Text('Case Options:')],
     [sg.Radio('Display Case', "RADIO1", default=True),
      sg.Radio('CC-JT Letter Creator', "RADIO1"),
-     sg.Radio('CC Letter Creator', "RADIO1"),
-     sg.Radio('Evidence Request Creator', "RADIO1"),
-     sg.Radio('Case Status/Change of Plea Updater', "RADIO1")
+     sg.Radio('CC Letter Creator', "RADIO1")
+     ],
+    [sg.Radio('Evidence Request Creator', "RADIO1"),
+     sg.Radio('Case Status/Change of Plea Updater', "RADIO1"),
+     sg.Radio('Guilty Plea Disposition Creator', "RADIO1")
      ],
     [sg.Column(submitButton),
      sg.Button(button_text="Add victim services?",
@@ -293,16 +306,22 @@ jobMakerLayout = [
      sg.Column(cancelButton)]
 ]
 
-popupOnError = [
-    []
-]
-
 window = sg.Window('Tracker Interface - Case Search', icon="SEAL.jpg").Layout(jobMakerLayout)
 while True:
     event, values = window.Read()
     driver.switch_to.window(driver.window_handles[0])
     driver.get("http://tracker4.pacga.org/home")
     driver.maximize_window()
+    x = 0
+    while x <= 4:
+        time.sleep(.25)
+        try:
+            driver.switch_to.alert.accept()
+        except:
+            x += 1
+            continue
+
+
     # Makes button invisible again.
     print(values, event)
     if event is None:
@@ -420,9 +439,10 @@ while True:
 
             # Save action item.
             try_click_on_load('/html/body/div[1]/div[2]/div[1]/table/tbody/tr/th/div[5]/form/table/tbody/tr/td/input')
-
     elif values[6]:
         letter_setup("Case Status letter sent.", "/documents/new?document_template_id=19308")
+    elif values[7]:
+        letter_setup("Guilty plea disposition letter sent.", "/documents/new?document_template_id=17924")
     else:
         print("ERROR NO RADIO BUTTON SELECTED")
         exit()
